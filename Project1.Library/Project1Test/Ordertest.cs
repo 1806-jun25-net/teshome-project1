@@ -16,11 +16,28 @@ namespace Project1Test
 
             //Act
             col.addcheesepizza();
+
             
             //Assert
             Assert.Equal("c", col.pizzalist[0]);
 
         }
+
+       /* [Theory]
+        [InlineData]
+        public void addcheesepizzaisaddedifmaximumpriceisreacheddont()
+        {
+            //Arrange
+            var col = new Order();
+
+            //Act
+            col.addcheesepizza();
+
+
+            //Assert
+            Assert.Equal("c", col.pizzalist[0]);
+
+         */
 
         [Fact]
         public void addpepperonipizzaisadded()
@@ -30,6 +47,7 @@ namespace Project1Test
 
             //Act
             col.addpepperonipizza();
+
 
             //Assert
             Assert.Equal("p", col.pizzalist[0]);
@@ -45,10 +63,31 @@ namespace Project1Test
             //Act
             col.addsausagepizza();
 
+
             //Assert
             Assert.Equal("s", col.pizzalist[0]);
 
         }
 
+        [Theory]
+        [InlineData(6, 2, 3)]
+        public void inventorycheckifcheeseisntenoughforpizza(int a, int b, int c)
+        {
+            //Arrange
+            var col = new Order();
+            Location g = new Location("0");
+            bool result;
+            col.cc = a;
+            col.pc = b;
+            col.sc = c; 
+
+            //Act
+            result = col.Inventorycheck(g);
+
+            //Assert
+            Assert.True(!result);
+
+        }   
+        
     }
 }

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<DataList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Orderlist />
+  <Locationlist>
+    <Location>
+      <Ingredients>
+        <int>5</int>
+        <int>5</int>
+        <int>5</int>
+      </Ingredients>
+      <Orderhistory />
+    </Location>
+    <Location>
+      <Ingredients>
+        <int>5</int>
+        <int>5</int>
+        <int>5</int>
+      </Ingredients>
+      <Orderhistory />
+    </Location>
+  </Locationlist>
+  <Userlist>
+    <User>
+      <Firstname>bob</Firstname>
+      <Lastname>barker</Lastname>
+      <defaultlocationID>0</defaultlocationID>
+      <userorderhistory />
+      <username>user1</username>
+    </User>
+    <User>
+      <Firstname>kate</Firstname>
+      <Lastname>cake</Lastname>
+      <defaultlocationID>1</defaultlocationID>
+      <userorderhistory />
+      <username>user2</username>
+    </User>
+  </Userlist>
+</DataList>

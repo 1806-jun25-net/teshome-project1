@@ -8,7 +8,9 @@ namespace Project1.Library
     {
         string Firstname { get; set; }
         string Lastname { get; set; }
-        int locationID { get; set; }
+        int defaultlocationID { get; set; }
+        List<int> userorderhistory { get; set; }
+        string username { get; set; }
 
 
     }

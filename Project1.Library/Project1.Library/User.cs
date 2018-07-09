@@ -8,9 +8,30 @@ namespace Project1.Library
 
     public class User : IUser
     {
-        public string Firstname { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Lastname { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int locationID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
+        public int defaultlocationID { get; set; }
+        public List<int> userorderhistory { get; set; } = new List<int>();
+        public string username { get; set; }
+
+        public User(string un, string fn, string ln, int did)
+        {
+            Firstname = fn;
+            Lastname = ln;
+            defaultlocationID = did;
+            username = un;
+
+
+        }
+
+        public User()
+        {
+
+        }
+       
+
+
+
     }
 
     

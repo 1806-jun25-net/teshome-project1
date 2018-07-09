@@ -6,7 +6,7 @@ namespace Project1.Library
 {
     public interface ILocation
     {
-          Dictionary<string, int> Ingredients { get; set; }
+          List<int> Ingredients { get; set; }
           List<int> Orderhistory { get; set; }
 
 
