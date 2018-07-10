@@ -1,6 +1,10 @@
-﻿using Project1.Library;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Project1.data;
+using Project1.Library;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace Project1.UI
@@ -9,6 +13,17 @@ namespace Project1.UI
     {
         public static void Main(string[] args)
         {
+
+            var configBuilder = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+
+            IConfigurationRoot configuration = configBuilder.Build();
+
+
+            var optionsBuilder = new DbContextOptionsBuilder<Project1DBContext>();
+            optionsBuilder.UseSqlServer(configuration.GetConnectionString("project1db"));
+            var options = optionsBuilder.Options;
 
             DataList dl;
 

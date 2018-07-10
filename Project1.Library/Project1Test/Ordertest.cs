@@ -75,7 +75,7 @@ namespace Project1Test
         {
             //Arrange
             var col = new Order();
-            Location g = new Location("0");
+            Location g = new Location();
             bool result;
             col.cc = a;
             col.pc = b;
