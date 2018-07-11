@@ -20,13 +20,18 @@ namespace Project1.UI
 
             IConfigurationRoot configuration = configBuilder.Build();
 
+            //Console.WriteLine(configuration.GetConnectionString("project1db"));
 
             var optionsBuilder = new DbContextOptionsBuilder<Project1DBContext>();
             optionsBuilder.UseSqlServer(configuration.GetConnectionString("project1db"));
             var options = optionsBuilder.Options;
 
-            DataList dl;
+            var dbcontextstorage = new Project1DBContext();
 
+
+            DataList dl = new DataList(dbcontextstorage);
+
+            /*
             Task<DataList> desListTask = Serialize.DeserializeFromFileAsync(@"C:\Revature\teshome-project1\Project1.Library\data.xml");
             DataList result = null;
             try
@@ -46,6 +51,8 @@ namespace Project1.UI
             {
                 dl = new DataList();
             }
+
+            */
 
             Order orderobject = new Order();
             
@@ -107,7 +114,7 @@ namespace Project1.UI
 
             while (!(input.Equals("0") || input.Equals("1")));
 
-            orderobject.locationID = input;
+            orderobject.locationID = Int32.Parse(input);
 
 
             Console.WriteLine("Would you like to access this location's order history? Input yes or no");
@@ -182,7 +189,7 @@ namespace Project1.UI
 
             }
 
-            if(orderobject.Inventorycheck((dl.Locationlist[Int32.Parse(orderobject.locationID)])) == true)
+            if(orderobject.Inventorycheck((dl.Locationlist[orderobject.locationID])) == true)
             {
                 Console.WriteLine($"Order submitted at {orderobject.ordertime = DateTime.Now} at {orderobject.locationID} by {orderobject.username}");
                 Console.WriteLine("Order Submitted to Orderlist");
@@ -191,7 +198,7 @@ namespace Project1.UI
                 dl.Unub(name).userorderhistory.Add(orderobject.orderID);
                 dl.Orderlist.Add(orderobject);
 
-                // add when SQL is working ((dl.Locationlist[Int32.Parse(orderobject.locationID)]));
+                // add when SQL is working ((dl.Locationlist[orderobject.locationID]));
                 //Give Order ID in SQL
             }
             else

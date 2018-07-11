@@ -6,11 +6,9 @@ namespace Project1.Library
 {
     public interface ILocation
     {
-          List<int> Ingredients { get; set; }
-          List<int> Orderhistory { get; set; }
-
-
-        
-
+        int Cheeseinventory { get; set; }
+        int Pepperoniinventory { get; set; }
+        int Sausageinventory { get; set; }
+        List<int> Orderhistory { get; set; }
     }
 }

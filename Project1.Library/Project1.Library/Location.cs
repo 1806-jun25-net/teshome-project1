@@ -6,14 +6,16 @@ namespace Project1.Library
 {
     public class Location : ILocation
     {
-        public List<int> Ingredients { get; set; } = new List<int>();
+        public int Cheeseinventory { get; set; }
+        public int Pepperoniinventory { get; set; }
+        public int Sausageinventory { get; set; }
         public List<int> Orderhistory { get; set; } = new List<int>();
 
         public Location()
         {
-            Ingredients.Add(5);//cheese inventory
-            Ingredients.Add(5);//pepperoni inventory
-            Ingredients.Add(5);//sausage inventory
+            Cheeseinventory = (5);//cheese inventory
+            Pepperoniinventory = (5);//pepperoni inventory
+            Sausageinventory = (5);//sausage inventory
         }
 
     }

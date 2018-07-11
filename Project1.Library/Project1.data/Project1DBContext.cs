@@ -23,7 +23,7 @@ namespace Project1.data
         {
             if (!optionsBuilder.IsConfigured)
             {
- 
+
             }
         }
 
@@ -38,10 +38,6 @@ namespace Project1.data
                     .ValueGeneratedNever();
 
                 entity.Property(e => e.Cheeseinventory).HasColumnName("cheeseinventory");
-
-                entity.Property(e => e.Orderhistory)
-                    .HasColumnName("orderhistory")
-                    .HasColumnType("datetime");
 
                 entity.Property(e => e.Pepperoniinventory).HasColumnName("pepperoniinventory");
 
@@ -77,11 +73,17 @@ namespace Project1.data
                     .HasColumnName("username")
                     .HasMaxLength(30);
 
+                entity.HasOne(d => d.Location)
+                    .WithMany(p => p.Orders)
+                    .HasForeignKey(d => d.LocationId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__orders__location__628FA481");
+
                 entity.HasOne(d => d.UsernameNavigation)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.Username)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__orders__username__59FA5E80");
+                    .HasConstraintName("FK__orders__username__6383C8BA");
             });
 
             modelBuilder.Entity<Users>(entity =>

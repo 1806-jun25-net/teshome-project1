@@ -6,10 +6,12 @@ namespace Project1.Library
 {
     public class Order : IOrder
     {
-        public string locationID { get; set; }
+        public int locationID { get; set; }
         public string username { get; set; }
         public DateTime ordertime { get; set; }
-        public List<string> pizzalist { get; set; } = new List<string>();
+        public int cheesepizza { get; set; }
+        public int pepperonipizza { get; set; }
+        public int sausagepizza { get; set; }
         public int currentprice { get; set; }
         public int orderID { get; set; }
 
@@ -32,9 +34,6 @@ namespace Project1.Library
 
             }
 
-           
-
-            pizzalist.Add("c");
             currentprice += c;
             cc++;
             return "Cheese Pizza added";
@@ -50,7 +49,6 @@ namespace Project1.Library
 
             }
 
-            pizzalist.Add("p");
             currentprice += p;
             pc++;
             return "Pepperoni Pizza added";
@@ -66,7 +64,6 @@ namespace Project1.Library
 
             }
 
-            pizzalist.Add("s");
             currentprice += s;
             sc++;
             return "Sausage Pizza added";
@@ -75,7 +72,7 @@ namespace Project1.Library
 
         public bool Inventorycheck(Location loc)
         {
-            if(cc <= loc.Ingredients[0] && pc <= loc.Ingredients[1] && sc<= loc.Ingredients[2])
+            if(cc <= loc.Cheeseinventory && pc <= loc.Pepperoniinventory && sc<= loc.Sausageinventory)
             {
                 return true;
             }

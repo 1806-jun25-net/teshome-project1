@@ -14,6 +14,7 @@ namespace Project1.data
         public int Pepperonipizza { get; set; }
         public int Sausagepizza { get; set; }
 
+        public Locations Location { get; set; }
         public Users UsernameNavigation { get; set; }
     }
 }

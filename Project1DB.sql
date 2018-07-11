@@ -23,7 +23,7 @@ Create table pizzaproject.users
 create table pizzaproject.orders
 (
 
-	locationID int NOT NULL,
+	locationID int NOT NULL foreign key references pizzaproject.locations(id),
 	username nvarchar(30) NOT NULL foreign key references pizzaproject.users(username), 
 	ordertime datetime NOT NULL,
 	currentprice int NOT NULL,
@@ -42,56 +42,24 @@ create table pizzaproject.locations(
 	 cheeseinventory int NOT NULL,
 	 pepperoniinventory int NOT NULL,
 	 sausageinventory int NOT NULL,
-	 orderhistory datetime NOT NULL
 	 primary key (id)
 
 );
 
 
 
-insert into users.firstname
-values('bob');
-
-insert into users.lastname
-values('barker');
-
-insert into users.defaultlocationid
-values('0');
-
-insert into users.userorderhistory
-values('');
-
-insert into users.username
-values('bobby1');
+insert into pizzaproject.users
+values('bobby1', 'bob', 'barker', '0');
 
 
+insert into pizzaproject.orders
+values('0', 'bobby1', '7:00', '$10', '2', '7', '7', '7');
 
 
-insert into orders.locationID
-values('0');
-
-insert into orders.username
-values('bob');
-
-insert into orders.ordertime
-values('barker');
+insert into pizzaproject.locations
+values('5', 'cheese', 'pepperoni', 'sausage' );
 
 
-insert into order.currentprice
-values('');
-
-insert into orders.orderid
-values('');
-
-
-
-
-
-insert into locations.ingredients
-values('cheese', 'pepperoni', 'sausage' );
-
-insert into locations.orderhistory
-values('');
 
 
 
