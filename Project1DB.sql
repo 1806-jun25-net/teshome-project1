@@ -57,11 +57,12 @@ values('0', 'bobby1', '7:00', '$10', '2', '7', '7', '7');
 
 
 insert into pizzaproject.locations
-values('5', 'cheese', 'pepperoni', 'sausage' );
+values(0, 30, 30, 30), (1, 30, 30, 30);
 
 
+select * from pizzaproject.orders
 
-
+delete from pizzaproject.orders where orderid = 1
 
 
 

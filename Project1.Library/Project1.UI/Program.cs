@@ -76,7 +76,7 @@ namespace Project1.UI
                         for (int g = 0; g < placeholderforusername.userorderhistory.Count; g++)
                         {
                             Order currentorder = dl.OID(placeholderforusername.userorderhistory[g]);
-                            Console.WriteLine($"Here is your Order History: Order ID{currentorder.orderID}, LocationID: {currentorder.locationID}, User{currentorder.username}, Order Details, Chesse: {currentorder.cc}, Pepperoni: {currentorder.pc}, Sausage:{currentorder.sc}");
+                            Console.WriteLine($"Here is your Order History: Order ID{currentorder.orderID}, LocationID: {currentorder.locationID}, User{currentorder.username}, Order Details, Chesse: {currentorder.cheesepizza}, Pepperoni: {currentorder.pepperonipizza}, Sausage:{currentorder.sausagepizza}");
                         }
                         break;
                     case "no":
@@ -128,7 +128,7 @@ namespace Project1.UI
                         for (int g = 0; g < dl.Locationlist[Int32.Parse(input)].Orderhistory.Count; g++)
                         {
                             Order currentorder = dl.OID(dl.Locationlist[Int32.Parse(input)].Orderhistory[g]);
-                            Console.WriteLine($"Here is your Order History: Order ID{currentorder.orderID}, LocationID: {currentorder.locationID}, User{currentorder.username}, Order Details, Chesse: {currentorder.cc}, Pepperoni: {currentorder.pc}, Sausage:{currentorder.sc}");
+                            Console.WriteLine($"Here is your Order History: Order ID{currentorder.orderID}, LocationID: {currentorder.locationID}, User{currentorder.username}, Order Details, Chesse: {currentorder.cheesepizza}, Pepperoni: {currentorder.pepperonipizza}, Sausage:{currentorder.sausagepizza}");
                         }
                         break;
                     case "no":
@@ -200,8 +200,11 @@ namespace Project1.UI
                 dl.Unub(name).userorderhistory.Add(orderobject.orderID);
                 dl.Orderlist.Add(orderobject);
 
-                // add when SQL is working ((dl.Locationlist[orderobject.locationID]));
-                //Give Order ID in SQL
+                dl.or.AddOrders(Mapper.Map(orderobject));
+                dl.lr.UpdateLocations(Mapper.Map(dl.Locationlist[orderobject.locationID]));
+                dl.ur.Save();
+
+                
             }
             else
             {

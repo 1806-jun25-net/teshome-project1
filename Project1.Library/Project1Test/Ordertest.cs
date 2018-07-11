@@ -77,9 +77,9 @@ namespace Project1Test
             var col = new Order();
             Location g = new Location();
             bool result;
-            col.cc = a;
-            col.pc = b;
-            col.sc = c; 
+            col.cheesepizza = a;
+            col.pepperonipizza = b;
+            col.sausagepizza = c; 
 
             //Act
             result = col.Inventorycheck(g);

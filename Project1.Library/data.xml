@@ -2,17 +2,24 @@
 <DataList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Orderlist>
     <Order>
-      <cc>5</cc>
-      <pc>2</pc>
-      <sc>5</sc>
       <locationID>0</locationID>
       <username>bobby1</username>
-      <ordertime>2018-07-10T22:10:51.5434948-04:00</ordertime>
+      <ordertime>2018-07-10T23:25:54.053</ordertime>
       <cheesepizza>0</cheesepizza>
       <pepperonipizza>0</pepperonipizza>
       <sausagepizza>0</sausagepizza>
       <currentprice>480</currentprice>
       <orderID>1</orderID>
+    </Order>
+    <Order>
+      <locationID>0</locationID>
+      <username>bobby1</username>
+      <ordertime>2018-07-11T00:47:24.2972288-04:00</ordertime>
+      <cheesepizza>5</cheesepizza>
+      <pepperonipizza>2</pepperonipizza>
+      <sausagepizza>5</sausagepizza>
+      <currentprice>480</currentprice>
+      <orderID>2</orderID>
     </Order>
   </Orderlist>
   <Locationlist>
@@ -22,6 +29,7 @@
       <Sausageinventory>30</Sausageinventory>
       <Orderhistory>
         <int>1</int>
+        <int>2</int>
       </Orderhistory>
     </Location>
     <Location>
@@ -38,6 +46,7 @@
       <defaultlocationID>0</defaultlocationID>
       <userorderhistory>
         <int>1</int>
+        <int>2</int>
       </userorderhistory>
       <username>bobby1</username>
     </User>

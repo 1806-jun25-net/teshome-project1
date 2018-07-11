@@ -45,10 +45,11 @@ namespace Project1.Library
 
         }
 
-        private int counter = 0;
+        private int counter; 
 
         public int getneworderid()
         {
+            counter = Orderlist.Max(s => s.orderID);
             counter++;
 
             return counter;

@@ -19,9 +19,7 @@ namespace Project1.Library
         int p = 40;
         int s = 30;
         int maxprice = 500;
-       public int cc = 0;
-       public int pc = 0;
-       public int sc = 0;
+       
 
         
 
@@ -35,7 +33,7 @@ namespace Project1.Library
             }
 
             currentprice += c;
-            cc++;
+            cheesepizza++;
             return "Cheese Pizza added";
         }
 
@@ -50,7 +48,7 @@ namespace Project1.Library
             }
 
             currentprice += p;
-            pc++;
+            pepperonipizza++;
             return "Pepperoni Pizza added";
         }
 
@@ -65,14 +63,14 @@ namespace Project1.Library
             }
 
             currentprice += s;
-            sc++;
+            sausagepizza++;
             return "Sausage Pizza added";
         }
 
 
         public bool Inventorycheck(Location loc)
         {
-            if(cc <= loc.Cheeseinventory && pc <= loc.Pepperoniinventory && sc<= loc.Sausageinventory)
+            if(cheesepizza <= loc.Cheeseinventory && pepperonipizza <= loc.Pepperoniinventory && sausagepizza<= loc.Sausageinventory)
             {
                 return true;
             }

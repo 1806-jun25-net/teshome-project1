@@ -24,10 +24,10 @@ namespace Project1.Library
 
         public void AddOrders(data.Orders x)
         {
-            _db.Add(Mapper.Map(x));
+            _db.Add(x);
         }
-        
-    
+
+
         public void Save()
         {
             _db.SaveChanges();
