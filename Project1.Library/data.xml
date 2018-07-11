@@ -1,21 +1,33 @@
 <?xml version="1.0"?>
 <DataList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Orderlist />
+  <Orderlist>
+    <Order>
+      <cc>5</cc>
+      <pc>2</pc>
+      <sc>5</sc>
+      <locationID>0</locationID>
+      <username>bobby1</username>
+      <ordertime>2018-07-10T22:10:51.5434948-04:00</ordertime>
+      <cheesepizza>0</cheesepizza>
+      <pepperonipizza>0</pepperonipizza>
+      <sausagepizza>0</sausagepizza>
+      <currentprice>480</currentprice>
+      <orderID>1</orderID>
+    </Order>
+  </Orderlist>
   <Locationlist>
     <Location>
-      <Ingredients>
-        <int>5</int>
-        <int>5</int>
-        <int>5</int>
-      </Ingredients>
-      <Orderhistory />
+      <Cheeseinventory>30</Cheeseinventory>
+      <Pepperoniinventory>30</Pepperoniinventory>
+      <Sausageinventory>30</Sausageinventory>
+      <Orderhistory>
+        <int>1</int>
+      </Orderhistory>
     </Location>
     <Location>
-      <Ingredients>
-        <int>5</int>
-        <int>5</int>
-        <int>5</int>
-      </Ingredients>
+      <Cheeseinventory>30</Cheeseinventory>
+      <Pepperoniinventory>30</Pepperoniinventory>
+      <Sausageinventory>30</Sausageinventory>
       <Orderhistory />
     </Location>
   </Locationlist>
@@ -24,15 +36,10 @@
       <Firstname>bob</Firstname>
       <Lastname>barker</Lastname>
       <defaultlocationID>0</defaultlocationID>
-      <userorderhistory />
-      <username>user1</username>
-    </User>
-    <User>
-      <Firstname>kate</Firstname>
-      <Lastname>cake</Lastname>
-      <defaultlocationID>1</defaultlocationID>
-      <userorderhistory />
-      <username>user2</username>
+      <userorderhistory>
+        <int>1</int>
+      </userorderhistory>
+      <username>bobby1</username>
     </User>
   </Userlist>
 </DataList>

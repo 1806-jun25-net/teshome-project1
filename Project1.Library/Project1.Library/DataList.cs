@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace Project1.Library
 {
@@ -11,9 +12,13 @@ namespace Project1.Library
         public List<Order> Orderlist { get; set; } = new List<Order>();
         public List<Location> Locationlist { get; set; } = new List<Location>();
         public List<User> Userlist { get; set; } = new List<User>();
+        
 
+        [XmlIgnore]
         public Usersrepository ur;
+        [XmlIgnore]
         public Ordersrepository or;
+        [XmlIgnore]
         public Locationsrepository lr;
         
 

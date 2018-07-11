@@ -26,7 +26,7 @@ namespace Project1.UI
             optionsBuilder.UseSqlServer(configuration.GetConnectionString("project1db"));
             var options = optionsBuilder.Options;
 
-            var dbcontextstorage = new Project1DBContext();
+            var dbcontextstorage = new Project1DBContext(options);
 
 
             DataList dl = new DataList(dbcontextstorage);
@@ -188,6 +188,8 @@ namespace Project1.UI
                 }
 
             }
+
+            Console.WriteLine(orderobject.locationID);
 
             if(orderobject.Inventorycheck((dl.Locationlist[orderobject.locationID])) == true)
             {
