@@ -63,6 +63,8 @@ namespace Project1.UI
             Console.WriteLine("Enter your Username");
             string name = Console.ReadLine();
             orderobject.username = name;
+
+
             User placeholderforusername = dl.Unub(name);
             Order sss = dl.OID(placeholderforusername.userorderhistory.Last());
 
@@ -73,10 +75,14 @@ namespace Project1.UI
             Console.WriteLine(sss.username);
             Console.WriteLine(sss.locationID);
             Console.WriteLine(sss.ordertime = DateTime.Now);
-            
-            
 
-           
+       
+            Console.WriteLine("Search for other Users");
+            name = Console.ReadLine();
+            Console.WriteLine(dl.Unub(name).Firstname);
+            Console.WriteLine(dl.Unub(name).Lastname);
+            Console.WriteLine($"Location ID:{dl.Unub(name).defaultlocationID}");
+
 
             Console.WriteLine("Would you like to see your order history? Input yes or no");
             string input1;

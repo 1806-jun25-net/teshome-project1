@@ -51,6 +51,13 @@ create table pizzaproject.locations(
 insert into pizzaproject.users
 values('bobby1', 'bob', 'barker', '0');
 
+insert into pizzaproject.users
+values('lyket', 'Lyke', 'Teshome', '0');
+
+insert into pizzaproject.users
+values('mac', 'mac', 'n chesse', '1');
+
+
 
 insert into pizzaproject.orders
 values('0', 'bobby1', '7:00', '$10', '2', '7', '7', '7');
