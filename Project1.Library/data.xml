@@ -4,22 +4,62 @@
     <Order>
       <locationID>0</locationID>
       <username>bobby1</username>
-      <ordertime>2018-07-10T23:25:54.053</ordertime>
-      <cheesepizza>0</cheesepizza>
-      <pepperonipizza>0</pepperonipizza>
-      <sausagepizza>0</sausagepizza>
-      <currentprice>480</currentprice>
-      <orderID>1</orderID>
-    </Order>
-    <Order>
-      <locationID>0</locationID>
-      <username>bobby1</username>
-      <ordertime>2018-07-11T00:47:24.2972288-04:00</ordertime>
+      <ordertime>2018-07-11T00:47:24.297</ordertime>
       <cheesepizza>5</cheesepizza>
       <pepperonipizza>2</pepperonipizza>
       <sausagepizza>5</sausagepizza>
       <currentprice>480</currentprice>
       <orderID>2</orderID>
+    </Order>
+    <Order>
+      <locationID>0</locationID>
+      <username>bobby1</username>
+      <ordertime>2018-07-11T02:58:57.543</ordertime>
+      <cheesepizza>5</cheesepizza>
+      <pepperonipizza>0</pepperonipizza>
+      <sausagepizza>4</sausagepizza>
+      <currentprice>370</currentprice>
+      <orderID>3</orderID>
+    </Order>
+    <Order>
+      <locationID>1</locationID>
+      <username>bobby1</username>
+      <ordertime>2018-07-11T09:17:29.723</ordertime>
+      <cheesepizza>10</cheesepizza>
+      <pepperonipizza>0</pepperonipizza>
+      <sausagepizza>0</sausagepizza>
+      <currentprice>500</currentprice>
+      <orderID>4</orderID>
+    </Order>
+    <Order>
+      <locationID>0</locationID>
+      <username>bobby1</username>
+      <ordertime>2018-07-11T10:37:23.747</ordertime>
+      <cheesepizza>10</cheesepizza>
+      <pepperonipizza>0</pepperonipizza>
+      <sausagepizza>0</sausagepizza>
+      <currentprice>500</currentprice>
+      <orderID>5</orderID>
+    </Order>
+    <Order>
+      <locationID>0</locationID>
+      <username>bobby1</username>
+      <ordertime>2018-07-13T10:46:47.8659914-04:00</ordertime>
+      <cheesepizza>5</cheesepizza>
+      <pepperonipizza>0</pepperonipizza>
+      <sausagepizza>5</sausagepizza>
+      <currentprice>400</currentprice>
+      <orderID>6</orderID>
+    </Order>
+    <Order>
+      <locationID>1</locationID>
+      <username>bobby1</username>
+      <ordertime>2018-07-13T10:47:05.0579704-04:00</ordertime>
+      <cheesepizza>1</cheesepizza>
+      <pepperonipizza>0</pepperonipizza>
+      <sausagepizza>0</sausagepizza>
+      <currentprice>50</currentprice>
+      <orderID>7</orderID>
     </Order>
   </Orderlist>
   <Locationlist>
@@ -28,15 +68,20 @@
       <Pepperoniinventory>30</Pepperoniinventory>
       <Sausageinventory>30</Sausageinventory>
       <Orderhistory>
-        <int>1</int>
         <int>2</int>
+        <int>3</int>
+        <int>5</int>
+        <int>6</int>
       </Orderhistory>
     </Location>
     <Location>
       <Cheeseinventory>30</Cheeseinventory>
       <Pepperoniinventory>30</Pepperoniinventory>
       <Sausageinventory>30</Sausageinventory>
-      <Orderhistory />
+      <Orderhistory>
+        <int>4</int>
+        <int>7</int>
+      </Orderhistory>
     </Location>
   </Locationlist>
   <Userlist>
@@ -45,8 +90,12 @@
       <Lastname>barker</Lastname>
       <defaultlocationID>0</defaultlocationID>
       <userorderhistory>
-        <int>1</int>
         <int>2</int>
+        <int>3</int>
+        <int>4</int>
+        <int>5</int>
+        <int>6</int>
+        <int>7</int>
       </userorderhistory>
       <username>bobby1</username>
     </User>

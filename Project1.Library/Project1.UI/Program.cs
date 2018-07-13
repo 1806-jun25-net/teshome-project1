@@ -5,6 +5,7 @@ using Project1.Library;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Project1.UI
@@ -62,8 +63,20 @@ namespace Project1.UI
             Console.WriteLine("Enter your Username");
             string name = Console.ReadLine();
             orderobject.username = name;
-
             User placeholderforusername = dl.Unub(name);
+            Order sss = dl.OID(placeholderforusername.userorderhistory.Last());
+
+            Console.WriteLine($"Here we have a recommended order for you based on a previous order,");
+            Console.WriteLine($"Cheese Pizza {sss.cheesepizza}");
+            Console.WriteLine($"Pepperoni Pizza {sss.pepperonipizza}");
+            Console.WriteLine($"Sausage Pizza {sss.sausagepizza}");
+            Console.WriteLine(sss.username);
+            Console.WriteLine(sss.locationID);
+            Console.WriteLine(sss.ordertime = DateTime.Now);
+            
+            
+
+           
 
             Console.WriteLine("Would you like to see your order history? Input yes or no");
             string input1;
@@ -116,7 +129,18 @@ namespace Project1.UI
 
             orderobject.locationID = Int32.Parse(input);
 
+            placeholderforusername.userorderhistory.Last(d => dl.OID(d).locationID == orderobject.locationID);
 
+            Order p = (dl.OID(placeholderforusername.userorderhistory.Last(d => dl.OID(d).locationID == orderobject.locationID)));
+            
+            DateTime.Compare(p.ordertime.AddHours(2) , DateTime.Now);
+
+            if(DateTime.Compare(p.ordertime.AddHours(2), DateTime.Now) > 0)
+            {
+                Console.WriteLine ("You cannot place an order at this location. Goodbye");
+                return;
+            }
+            
             Console.WriteLine("Would you like to access this location's order history? Input yes or no");
             string input2;
             do
@@ -216,7 +240,7 @@ namespace Project1.UI
 
 
 
-            //add to order history
+           
 
             //Order.orderID(orderobject);
 
