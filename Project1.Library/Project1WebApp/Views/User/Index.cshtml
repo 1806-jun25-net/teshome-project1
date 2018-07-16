@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "User Home Page";
+}
+
+<h2>User Home Page</h2>
+
+<p>Input Login Username</p>
+<form asp-controller ="User" asp-action="SuggestedOrderView">
+    <input type="text" name="myTextBox" />
+
+
+    <input type="submit" value="Search" />
+</form>
+
+
+
+<a asp-action="Usersearchpageredirect" asp-controller="User">
+    Go to User Search
+</a>
+
+
+
+
+
+
+
+
+

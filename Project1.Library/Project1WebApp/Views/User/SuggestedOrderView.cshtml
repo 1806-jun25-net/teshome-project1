@@ -1,0 +1,37 @@
+﻿@model Project1WebApp.Models.OrderWeb
+@{
+    ViewData["Title"] = "SuggestedOrderView";
+}
+
+<h2>SuggestedOrderView</h2>
+
+<p>Suggested Order</p>
+
+@Model.username
+@Model.cheesepizza
+@Model.pepperonipizza
+@Model.sausagepizza
+@Model.ordertime
+@Model.locationID
+
+
+
+
+<p>Would you like to know your order history?</p>
+<form action="">
+    <input type="radio" name="gender" value="yes">Yes<br>
+    <input type="radio" name="gender" value="no">No<br>
+</form>
+
+<p>View Order History</p>
+
+
+
+
+<a asp-action="Usersearchpage" asp-controller="User">
+    Go to User Search
+</a>
+
+<a asp-action="Create" asp-controller="Order">
+    Move to Order Page
+</a>

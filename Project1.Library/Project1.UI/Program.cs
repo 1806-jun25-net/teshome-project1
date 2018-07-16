@@ -81,7 +81,7 @@ namespace Project1.UI
             name = Console.ReadLine();
             Console.WriteLine(dl.Unub(name).Firstname);
             Console.WriteLine(dl.Unub(name).Lastname);
-            Console.WriteLine($"Location ID:{dl.Unub(name).defaultlocationID}");
+            Console.WriteLine($"Default Location ID:{dl.Unub(name).defaultlocationID}");
 
 
             Console.WriteLine("Would you like to see your order history? Input yes or no");
