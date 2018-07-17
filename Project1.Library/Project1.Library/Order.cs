@@ -15,10 +15,10 @@ namespace Project1.Library
         public int currentprice { get; set; }
         public int orderID { get; set; }
 
-        int c = 50;
-        int p = 40;
-        int s = 30;
-        int maxprice = 500;
+        public int c = 50;
+        public int p = 40;
+        public int s = 30;
+        public int maxprice = 500;
        
 
         

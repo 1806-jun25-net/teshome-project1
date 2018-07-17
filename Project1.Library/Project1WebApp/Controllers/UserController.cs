@@ -12,15 +12,18 @@ namespace Project1WebApp.Controllers
 {
     public class UserController : Controller
     {
-        public UserController(Usersrepository ur, DataList dul)
+        public UserController(Usersrepository ur, DataList dul, Ordersrepository por)
         {
             Lur = ur;
             dl = dul;
+            or = por;
         }
 
         public Usersrepository Lur { get; set; } 
 
         public DataList dl { get; set; }
+
+        public Ordersrepository or { get; set; }
  
        
 
@@ -143,11 +146,22 @@ namespace Project1WebApp.Controllers
 
         public ActionResult SuggestedOrderView(string myTextBox)
         {
-
-            
-
+            Order sss;
             User placeholderforusername = dl.Unub(myTextBox);
-            Order sss = dl.OID(placeholderforusername.userorderhistory.Last());
+            if (placeholderforusername.userorderhistory.Count == 0)
+            {
+                sss = new Order()
+                { cheesepizza = 1, pepperonipizza = 1, sausagepizza = 1
+                };
+                    
+            
+            }
+            else
+            {
+                sss = dl.OID(placeholderforusername.userorderhistory.Last());
+            }   
+               
+                TempData["username"] = myTextBox;
 
 
             var owo = new OrderWeb
@@ -164,7 +178,28 @@ namespace Project1WebApp.Controllers
 
             };
 
-            return View(owo);
+           List<Order> ol = or.GetOrders().Where(q => q.username.Equals(myTextBox)).ToList();
+
+            List<OrderWeb> owl = new List<OrderWeb>(); 
+             
+            foreach (var oml in ol)
+            {
+                owl.Add(new OrderWeb
+                {
+
+                    locationID = sss.locationID,
+                    username = sss.username,
+                    ordertime = sss.ordertime,
+                    cheesepizza = sss.cheesepizza,
+                    pepperonipizza = sss.pepperonipizza,
+                    sausagepizza = sss.sausagepizza,
+                    currentprice = sss.currentprice,
+                    orderID = sss.orderID
+
+                });
+            }
+
+            return View(owl);
         } 
 
 

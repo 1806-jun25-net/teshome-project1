@@ -1,32 +1,36 @@
-﻿@model Project1WebApp.Models.OrderWeb
+﻿@model List<Project1WebApp.Models.OrderWeb>
 @{
     ViewData["Title"] = "SuggestedOrderView";
 }
 
 <h2>SuggestedOrderView</h2>
 
-<p>Suggested Order</p>
+<h3>Suggested Order</h3>
+@if (Model.Count > 0)
+{
+    @Model[Model.Count - 1].username
+    @Model[Model.Count - 1].cheesepizza
+    @Model[Model.Count - 1].pepperonipizza
+    @Model[Model.Count - 1].sausagepizza
+    @Model[Model.Count - 1].ordertime
+    @Model[Model.Count - 1].locationID
 
-@Model.username
-@Model.cheesepizza
-@Model.pepperonipizza
-@Model.sausagepizza
-@Model.ordertime
-@Model.locationID
-
-
-
-
-<p>Would you like to know your order history?</p>
-<form action="">
-    <input type="radio" name="gender" value="yes">Yes<br>
-    <input type="radio" name="gender" value="no">No<br>
-</form>
-
-<p>View Order History</p>
+}
 
 
 
+
+<h3>View Order History</h3>
+
+@foreach (var ohl in Model)
+{
+    @ohl.username
+    @ohl.cheesepizza
+    @ohl.pepperonipizza
+    @ohl.sausagepizza
+    @ohl.ordertime
+    @ohl.locationID
+};
 
 <a asp-action="Usersearchpage" asp-controller="User">
     Go to User Search
