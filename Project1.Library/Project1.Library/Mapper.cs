@@ -57,8 +57,8 @@ namespace Project1.Library
             Cheeseinventory = tock.Cheeseinventory,
             Pepperoniinventory = tock.Pepperoniinventory,
             Sausageinventory = tock.Sausageinventory,
-            Orderhistory = tock.Orders.Select(x => x.Orderid).ToList()
-
+            Orderhistory = tock.Orders.Select(x => x.Orderid).ToList(),
+            Id = tock.Id
         };
 
         
@@ -67,7 +67,8 @@ namespace Project1.Library
             Cheeseinventory = tock.Cheeseinventory,
             Pepperoniinventory = tock.Pepperoniinventory,
             Sausageinventory = tock.Sausageinventory,
-        };
+            Id = tock.Id
+    };
         
         public static IEnumerable<User> Map(IEnumerable<data.Users> item) => item.Select(Map);
 

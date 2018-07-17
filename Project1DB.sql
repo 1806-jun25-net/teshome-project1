@@ -67,6 +67,7 @@ insert into pizzaproject.locations
 values(0, 30, 30, 30), (1, 30, 30, 30);
 
 
+select * from pizzaproject.locations
 select * from pizzaproject.orders
 
 delete from pizzaproject.orders where orderid = 1

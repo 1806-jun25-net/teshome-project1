@@ -11,5 +11,6 @@ namespace Project1WebApp.Models
         public int Pepperoniinventory { get; set; }
         public int Sausageinventory { get; set; }
         public List<int> Orderhistory { get; set; } = new List<int>();
+        public int Id { get; set; }
     }
 }
